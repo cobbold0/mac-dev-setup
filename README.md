@@ -1,12 +1,12 @@
-# 💻 Mac Dev Setup
+# Mac Dev Setup
 
 A clean, modular guide to setting up a new Mac for development.
 
-> ⚡ Install only what you need. Skip what you don’t.
+> Install only what you need. Skip what you don’t.
 
 ---
 
-## 📚 Docs
+## Docs
 
 - [Base Setup](./docs/base.md)
 - [Node.js Setup](./docs/node.md)
@@ -16,7 +16,7 @@ A clean, modular guide to setting up a new Mac for development.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Homebrew
 
