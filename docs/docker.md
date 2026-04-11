@@ -1,47 +1,18 @@
-# DOCKER SETUP (docs/docker.md)
+# Docker Setup
 
-## Install Docker Desktop
+## 1. Install Docker Desktop
+
 ```bash
 brew install --cask docker
 ```
 
-## Start Docker
-Open Docker Desktop from Applications
+## 2. Start Docker Desktop
 
-## Verify
+Open Docker Desktop from `Applications` and wait for it to finish initializing.
+
+## 3. Verify
+
 ```bash
+docker version
 docker run hello-world
-```
-
----
-
-# 🧪 TROUBLESHOOTING (docs/troubleshooting.md)
-
-## Node not found
-```bash
-source ~/.zshrc
-nvm install --lts
-```
-
-## JAVA_HOME not set
-```bash
-echo $JAVA_HOME
-```
-
-## Android SDK not found
-```bash
-echo $ANDROID_HOME
-```
-
-## adb not found
-```bash
-adb version
-```
-
-## Docker not working
-Ensure Docker Desktop is running
-
-## Changes not applied
-```bash
-source ~/.zshrc
 ```

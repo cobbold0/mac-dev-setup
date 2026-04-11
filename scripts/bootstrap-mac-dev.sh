@@ -8,6 +8,22 @@ install_android=false
 install_docker=false
 install_apps=false
 
+usage() {
+  cat <<'EOF'
+Usage: ./scripts/bootstrap-mac-dev.sh [options]
+
+Options:
+  --base       Install core CLI tools and create workspace folders
+  --node       Install nvm and configure shell support
+  --java       Install OpenJDK 17 and configure JAVA_HOME
+  --android    Install Android Studio and Android shell variables
+  --docker     Install Docker Desktop
+  --apps       Install common GUI apps
+  --all        Install everything above
+  --help       Show this help message
+EOF
+}
+
 for arg in "$@"; do
   case "$arg" in
     --base) install_base=true ;;
@@ -24,12 +40,27 @@ for arg in "$@"; do
       install_docker=true
       install_apps=true
       ;;
+    --help|-h)
+      usage
+      exit 0
+      ;;
     *)
       echo "Unknown option: $arg"
+      echo
+      usage
       exit 1
       ;;
   esac
 done
+
+if [ "$#" -eq 0 ]; then
+  usage
+  exit 0
+fi
+
+if [ "$install_android" = true ]; then
+  install_java=true
+fi
 
 if ! command -v brew >/dev/null 2>&1; then
   echo "Install Homebrew first."
@@ -79,4 +110,16 @@ if [ "$install_apps" = true ]; then
   brew install --cask visual-studio-code iterm2 postman
 fi
 
-echo "Done. Run: source ~/.zshrc"
+step=1
+
+echo "Done."
+echo "Next steps:"
+echo "  $step. Run: source ~/.zshrc"
+step=$((step + 1))
+if [ "$install_android" = true ]; then
+  echo "  $step. Open Android Studio and install SDK components from the SDK Manager"
+  step=$((step + 1))
+fi
+if [ "$install_docker" = true ]; then
+  echo "  $step. Open Docker Desktop from Applications before running docker commands"
+fi
