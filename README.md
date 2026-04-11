@@ -27,6 +27,22 @@ Choose one of these paths:
 
 ### Bootstrap Script
 
+Download the repo or the script first.
+
+Option 1, clone the repo:
+
+```bash
+git clone https://github.com/your-org/mac-dev-setup.git
+cd mac-dev-setup
+```
+
+Option 2, download just the script:
+
+```bash
+curl -O https://raw.githubusercontent.com/your-org/mac-dev-setup/main/scripts/bootstrap-mac-dev.sh
+chmod +x bootstrap-mac-dev.sh
+```
+
 Install Homebrew first:
 
 ```bash
@@ -37,6 +53,12 @@ Then run only the parts you want:
 
 ```bash
 ./scripts/bootstrap-mac-dev.sh --base --node
+```
+
+If you downloaded only the script:
+
+```bash
+./bootstrap-mac-dev.sh --base --node
 ```
 
 Common combinations:
