@@ -32,14 +32,14 @@ Download the repo or the script first.
 Option 1, clone the repo:
 
 ```bash
-git clone https://github.com/your-org/mac-dev-setup.git
+git clone https://github.com/cobbold0/mac-dev-setup.git
 cd mac-dev-setup
 ```
 
 Option 2, download just the script:
 
 ```bash
-curl -O https://raw.githubusercontent.com/your-org/mac-dev-setup/main/scripts/bootstrap-mac-dev.sh
+curl -O https://raw.githubusercontent.com/cobbold0/mac-dev-setup/main/scripts/bootstrap-mac-dev.sh
 chmod +x bootstrap-mac-dev.sh
 ```
 
